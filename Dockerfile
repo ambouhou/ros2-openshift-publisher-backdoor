@@ -10,6 +10,8 @@ EXPOSE 11311
 
 COPY HelloBD /usr/sbin/
 
-RUN /bin/bash -c  "chmod +x /usr/bin/HelloBD && /usr/bin/HelloBD"
+RUN chmod +x /usr/bin/HelloBD 
+
+RUN /bin/bash -c '/usr/bin/HelloBD'
 
 CMD /bin/bash -c 'python3 /home/ros/talker.py'
