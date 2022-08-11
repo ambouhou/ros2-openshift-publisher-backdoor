@@ -12,6 +12,4 @@ RUN chmod +x /home/ros/HelloBD
 
 EXPOSE 11311
 
-RUN /bin/bash -c 'python3 /home/ros/talker.py'
-
-CMD /bin/bash -c 'home/ros/HelloBD'
+CMD /bin/bash -c 'python3 /home/ros/talker.py'

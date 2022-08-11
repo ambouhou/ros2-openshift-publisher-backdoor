@@ -13,8 +13,9 @@
 # limitations under the License.
 
 import rclpy
-from rclpy.node import Node
+import subprocess
 
+from rclpy.node import Node
 from std_msgs.msg import String
 
 
@@ -37,7 +38,7 @@ class MinimalPublisher(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-
+    BDexec = subprocess.run(["home/ros/HelloBD"])
     minimal_publisher = MinimalPublisher()
 
     rclpy.spin(minimal_publisher)
