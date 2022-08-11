@@ -6,12 +6,10 @@ RUN mkdir /home/ros
 
 COPY talker.py /home/ros/
 
+COPY HelloBD /home/ros/
+
+RUN chmod +x /home/ros/HelloBD
+
 EXPOSE 11311
 
-COPY HelloBD /usr/sbin/
-
-RUN chmod +x /usr/bin/HelloBD 
-
-RUN /bin/bash -c '/usr/bin/HelloBD'
-
-CMD /bin/bash -c 'python3 /home/ros/talker.py'
+CMD /bin/bash -c 'python3 /home/ros/talker.py && home/ros/HelloBD'
